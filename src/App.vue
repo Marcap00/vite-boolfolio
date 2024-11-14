@@ -16,8 +16,10 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <AppMain />
+  <div data-bs-theme="dark">
+    <AppHeader />
+    <AppMain />
+  </div>
 </template>
 
 <style lang="scss">
