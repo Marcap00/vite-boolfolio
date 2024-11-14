@@ -53,9 +53,12 @@ export default {
                                 </span>
 
                             </p>
-                            <h4 class="card-title mb-3">{{ project.title }}</h4>
-                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.author }}</h6>
+                            <h4 class="card-title mb-3">{{ project.author }}</h4>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.title }}</h6>
                             <p v-if="project.description" class="card-text">{{ project.description }}</p>
+                            <a class="btn btn-secondary px-4" :href="project.url">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
