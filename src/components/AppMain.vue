@@ -33,33 +33,29 @@ export default {
 
 <template>
 
-    <main>
+    <main class="bg-body-tertiary">
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="card text-center p-3">
+            <div class="row row-cols-4">
+                <div v-for="project in projects" :key="project.id" class="col py-3">
+                    <div class="card text-center p-3 border-0 bg-transparent">
                         <div class="card-img-top">
-                            <!-- @if ($project->image)
-                            <img src="{{ asset('/storage/' . $project->image) }}" alt="{{ $project->name }}">
-                        @else  -->
-                            <img class=" rounded-3 img-fluid" src="https://placehold.co/400x300?text=Project"
-                                alt="Project's name">
-                            <!-- @endif -->
+                            <img v-if="project.image" :src="project.image" :alt="project.title">
+                            <img v-else class="rounded-3 img-fluid"
+                                :src="`https://placehold.co/400x300?text=${project.title}`" alt="Project's name">
                         </div>
                         <div class="card-body flex justify-content-center">
-                            <p class="card-text">Category: <span class="fw-semibold"></span></p>
+                            <p class="card-text">Category: <span class="fw-semibold">{{ project.type.name }}</span></p>
                             <p class="card-text">
-                                <!--  @forelse  ($project->technologies as $technology)
-                            <span class="badge text-black" style="background-color: {{ $technology->color }}">
-                                #{{ $technology->name }}
-                            </span>
-                            @empty
-                                No Technologies
-                            @endforelse -->
+
+                                <span v-for="technology in project.technologies" class="badge text-black"
+                                    :style="`background-color: ${technology.color}`">
+                                    #{{ technology.name }}
+                                </span>
+
                             </p>
-                            <h3 class="card-title mb-3"> </h3>
-                            <h6 class="card-subtitle mb-2 text-body-secondary"> </h6>
-                            <p class="card-text"> </p>
+                            <h4 class="card-title mb-3">{{ project.title }}</h4>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.author }}</h6>
+                            <p v-if="project.description" class="card-text">{{ project.description }}</p>
                         </div>
                     </div>
                 </div>
