@@ -22,7 +22,6 @@ a {
 
     &:hover {
         text-decoration: none;
-        scale: 1.05;
     }
 }
 </style>

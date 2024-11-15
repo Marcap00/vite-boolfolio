@@ -26,8 +26,5 @@ export default {
 .active {
     color: white;
     font-weight: 600;
-
-    /* &:hover {
-    } */
 }
 </style>
