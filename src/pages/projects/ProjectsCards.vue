@@ -37,11 +37,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <div class="row row-cols-4">
-            <ProjectsCardsItem v-for="project in projects" :key="project.id" :project="project" />
-        </div>
-    </div>
+    <ProjectsCardsItem v-for="project in projects" :key="project.id" :project="project" />
 </template>
 
 <style lang="scss" scoped></style>

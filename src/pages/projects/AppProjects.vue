@@ -11,7 +11,11 @@ export default {
 
 <template>
     <main class="bg-body-tertiary">
-        <ProjectsCards />
+        <div class="container">
+            <div class="row row-cols-4">
+                <ProjectsCards />
+            </div>
+        </div>
     </main>
 </template>
 
