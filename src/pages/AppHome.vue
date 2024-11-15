@@ -1,4 +1,5 @@
 <script>
+import { RouterLink } from 'vue-router';
 export default {
     data() {
         return {}
@@ -8,7 +9,9 @@ export default {
 
 <template>
     <main class="bg-body-tertiary d-flex justify-content-center align-items-center">
-        <h1 class="text-white">Home</h1>
+        <RouterLink :to="{ name: 'projects' }">
+            <h3>Vai al progetto <i class="fas fa-arrow-right"></i></h3>
+        </RouterLink>
     </main>
 </template>
 

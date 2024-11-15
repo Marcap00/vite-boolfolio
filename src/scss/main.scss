@@ -1,8 +1,12 @@
 /* General */
 a {
     text-decoration: none;
-    color: #fff;
+    color: #8b8b8b;
     margin-left: .5rem;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 /* Card */

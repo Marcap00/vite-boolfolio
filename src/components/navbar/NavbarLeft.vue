@@ -13,4 +13,16 @@ export default {
     </RouterLink>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+
+    &:hover {
+        text-decoration: none;
+        scale: 1.05;
+    }
+}
+</style>

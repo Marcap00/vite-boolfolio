@@ -10,10 +10,10 @@ export default {
     <div id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+                <RouterLink :to="{ name: 'home' }" activeClass="active">Home</RouterLink>
             </li>
             <li class="nav-item">
-                <RouterLink :to="{ name: 'projects' }">Projects</RouterLink>
+                <RouterLink :to="{ name: 'projects' }" activeClass="active">Projects</RouterLink>
             </li>
             <!-- <li class="nav-item">
                             <RouterLink :to="">Technologies</RouterLink>
@@ -22,4 +22,12 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.active {
+    color: white;
+    font-weight: 600;
+
+    /* &:hover {
+    } */
+}
+</style>
