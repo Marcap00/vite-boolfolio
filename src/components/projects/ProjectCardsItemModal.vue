@@ -6,15 +6,19 @@ export default {
             required: true
         }
     },
-    computed: {
-        UpperCaseTitle() {
-            const firstLetter = this.project.title.charAt(0).toUpperCase();
-            return firstLetter + this.project.title.substring(1);
-        }
-    },
     methods: {
         emitCloseModal() {
             this.$emit('closeModal')
+        }
+    },
+    computed: {
+        UpperCaseTitle() {
+            const firstLetter = this.project.title.charAt(0).toUpperCase()
+            const otherLetters = this.project.title.substring(1)
+            return firstLetter + otherLetters
+        },
+        getImageUrl() {
+            return `https://placehold.co/400x300?text=${this.project.title}`
         }
     }
 };
@@ -31,8 +35,7 @@ export default {
                 <div class="modal-body text-center">
                     <p class="card-text">Category: <span class="fw-semibold">{{ project.type.name }}</span></p>
                     <img v-if="project.image" :src="project.image" :alt="project.title">
-                    <img v-else class="img-fluid rounded mb-2"
-                        :src="`https://placehold.co/400x300?text=${project.title}`" alt="Project's name">
+                    <img v-else class="img-fluid rounded mb-2" :src="getImageUrl" alt="Project's name">
                     <p class="card-text">
                         <span v-for="technology in project.technologies" class="badge text-black"
                             :style="`background-color: ${technology.color}`">

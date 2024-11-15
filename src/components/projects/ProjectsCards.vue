@@ -1,11 +1,13 @@
 <script>
 import axios from 'axios';
 import ProjectsCardsItem from './ProjectsCardsItem.vue';
+import BaseLoader from '../general/BaseLoader.vue';
 
 export default {
     name: "ProjectsCards",
     components: {
-        ProjectsCardsItem
+        ProjectsCardsItem,
+        BaseLoader
     },
     data() {
         return {
@@ -37,7 +39,12 @@ export default {
 </script>
 
 <template>
-    <ProjectsCardsItem v-for="project in projects" :key="project.id" :project="project" />
+    <BaseLoader v-if="!this.projects.length" />
+    <div v-else class="row row-cols-4">
+        <ProjectsCardsItem v-show="this.projects.length" v-for="project in projects" :key="project.id"
+            :project="project" />
+    </div>
+
 </template>
 
 <style lang="scss" scoped></style>

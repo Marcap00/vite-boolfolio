@@ -3,18 +3,42 @@ import { RouterLink } from 'vue-router';
 
 export default {
     name: "NavbarRight",
+    data() {
+        return {
+            links: [
+                {
+                    routeName: 'home',
+                    text: 'Home'
+                },
+                {
+                    routeName: 'projects',
+                    text: 'Projects',
+                }
+            ]
+        }
+    },
+    computed: {
+        /* getUpperCaseLinkText() {
+            return this.links.map(link => {
+                const firstLetter = link.text.charAt(0).toUpperCase()
+                const otherLetters = link.text.slice(1)
+                return firstLetter + otherLetters
+            })
+        } */
+    }
 };
 </script>
 
 <template>
     <div id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <RouterLink :to="{ name: 'home' }" activeClass="active">Home</RouterLink>
+            <li v-for="(link, index) in links" :key="index" class="nav-item">
+                <RouterLink :to="{ name: link.routeName }" activeClass="active">{{ link.text }}
+                </RouterLink>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <RouterLink :to="{ name: 'projects' }" activeClass="active">Projects</RouterLink>
-            </li>
+            </li> -->
             <!-- <li class="nav-item">
                             <RouterLink :to="">Technologies</RouterLink>
                         </li> -->

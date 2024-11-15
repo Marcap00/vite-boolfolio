@@ -1,5 +1,5 @@
 <script>
-import ProjectsCards from './ProjectsCards.vue';
+import ProjectsCards from '../components/projects/ProjectsCards.vue';
 
 export default {
     name: "AppProjects",
@@ -12,9 +12,8 @@ export default {
 <template>
     <main class="bg-body-tertiary">
         <div class="container">
-            <div class="row row-cols-4">
-                <ProjectsCards />
-            </div>
+
+            <ProjectsCards />
         </div>
     </main>
 </template>
