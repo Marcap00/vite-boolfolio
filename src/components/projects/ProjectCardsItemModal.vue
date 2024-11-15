@@ -37,7 +37,7 @@ export default {
                     <img v-if="project.image" :src="project.image" :alt="project.title">
                     <img v-else class="img-fluid rounded mb-2" :src="getImageUrl" alt="Project's name">
                     <p class="card-text">
-                        <span v-for="technology in project.technologies" class="badge text-black"
+                        <span v-for="technology in project.technologies" class="badge text-black mx-2"
                             :style="`background-color: ${technology.color}`">
                             #{{ technology.name }}
                         </span>
@@ -50,7 +50,7 @@ export default {
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" @click="emitCloseModal()">Back <i
                             class="fas fa-arrow-left"></i></button>
-                    <a class="btn btn-secondary px-4 me-2" :href="project.url">
+                    <a class="btn btn-secondary px-4" :href="project.url">
                         <i class="fa-brands fa-github"></i>
                     </a>
                 </div>

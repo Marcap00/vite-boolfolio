@@ -40,7 +40,7 @@ export default {
                     <img v-else class="img-fluid" :src="getImageUrl" alt="Project's name">
                 </div>
                 <p class="card-text">
-                    <span v-for="technology in project.technologies" class="badge text-black"
+                    <span v-for="technology in project.technologies" class="badge text-black mx-2"
                         :style="`background-color: ${technology.color}`">
                         #{{ technology.name }}
                     </span>
