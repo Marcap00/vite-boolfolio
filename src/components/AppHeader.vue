@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: "AppHeader",
     data() {
         return {
 
@@ -9,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <header>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand bg-body-tertiary">
             <div class="container">
                 <div class="w-100 d-flex justify-content-between">
@@ -37,4 +38,8 @@ export default {
     </header>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+nav {
+    height: 60px;
+}
+</style>

@@ -2,6 +2,7 @@
 import ProjectsCards from './ProjectsCards.vue';
 
 export default {
+    name: "AppProjects",
     components: {
         ProjectsCards
     },
@@ -14,4 +15,4 @@ export default {
     </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

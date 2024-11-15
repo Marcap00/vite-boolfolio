@@ -3,6 +3,7 @@ import axios from 'axios';
 import ProjectsCardsItem from './ProjectsCardsItem.vue';
 
 export default {
+    name: "ProjectsCards",
     components: {
         ProjectsCardsItem
     },
@@ -43,4 +44,4 @@ export default {
     </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>

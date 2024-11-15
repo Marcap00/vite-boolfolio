@@ -1,11 +1,12 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
+import AppHome from './pages/AppHome.vue';
 
 export default {
+  name: 'App',
   components: {
     AppHeader,
-    AppMain
+    AppHome
   }
 };
 </script>
@@ -13,7 +14,7 @@ export default {
 <template>
   <div data-bs-theme="dark">
     <AppHeader />
-    <AppMain />
+    <AppHome />
   </div>
 </template>
 
