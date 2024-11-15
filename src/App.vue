@@ -1,4 +1,5 @@
 <script>
+import { RouterView } from 'vue-router';
 import AppHeader from './components/AppHeader.vue';
 import AppHome from './pages/AppHome.vue';
 
@@ -14,7 +15,7 @@ export default {
 <template>
   <div data-bs-theme="dark">
     <AppHeader />
-    <AppHome />
+    <RouterView></RouterView>
   </div>
 </template>
 

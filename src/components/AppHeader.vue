@@ -1,4 +1,5 @@
 <script>
+import { RouterLink } from 'vue-router';
 export default {
     name: "AppHeader",
     data() {
@@ -10,10 +11,10 @@ export default {
 </script>
 
 <template>
-    <header class="sticky-top">
+    <header class="sticky-top border-bottom">
         <nav class="navbar navbar-expand bg-body-tertiary">
             <div class="container">
-                <div class="w-100 d-flex justify-content-between">
+                <div class="w-100 d-flex justify-content-between align-items-center">
                     <a class="navbar-brand" href="#">
                         <img src="../assets/logo.svg" alt="Logo" width="30" height="24"
                             class="d-inline-block align-text-top">
@@ -22,14 +23,14 @@ export default {
                     <div id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Home</a>
+                                <RouterLink :to="{ name: 'home' }">Home</RouterLink>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Projects</a>
+                                <RouterLink :to="{ name: 'projects' }">Projects</RouterLink>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Technologies</a>
-                            </li>
+                            <!-- <li class="nav-item">
+                                <RouterLink :to="">Technologies</RouterLink>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -41,5 +42,11 @@ export default {
 <style lang="scss" scoped>
 nav {
     height: 60px;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        margin-left: .5rem;
+    }
 }
 </style>
