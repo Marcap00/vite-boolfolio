@@ -13,6 +13,10 @@ export default {
                 {
                     routeName: 'projects',
                     text: 'Projects',
+                },
+                {
+                    routeName: 'technologies',
+                    text: 'Technologies',
                 }
             ]
         }

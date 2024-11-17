@@ -35,7 +35,7 @@ export default {
                 <div class="modal-body text-center">
                     <p class="card-text">Category: <span class="fw-semibold">{{ project.type.name }}</span></p>
                     <img v-if="project.image" :src="project.image" :alt="project.title">
-                    <img v-else class="img-fluid rounded mb-2" :src="getImageUrl" alt="Project's name">
+                    <img v-else class="img-fluid rounded mb-2" :src="getImageUrl" :alt="project.title">
                     <p class="card-text">
                         <span v-for="technology in project.technologies" class="badge text-black mx-2"
                             :style="`background-color: ${technology.color}`">
