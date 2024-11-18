@@ -20,7 +20,10 @@ export default {
         },
         imageUrl() {
             return `https://placehold.co/400x300?text=${this.technology.name}`
-        }
+        },
+        technologyBackground() {
+            return `background-color: ${this.technology.color}`
+        },
     }
 };
 </script>
@@ -37,7 +40,7 @@ export default {
                     <img class="img-fluid rounded mb-2" :src="imageUrl" :alt="technology.name">
                     <h4 class="card-title mb-3">Name: {{ technology.name }}</h4>
                     <p class="card-text">
-                        <span class="badge text-black mx-2" :style="`background-color: ${technology.color}`">
+                        <span class="badge text-black mx-2" :style="technologyBackground">
                             Color: #{{ technology.color }}
                         </span>
                     </p>
