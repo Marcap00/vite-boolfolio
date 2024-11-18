@@ -19,7 +19,7 @@ export default {
         getDataProjects() {
             axios.get(this.urlApi)
                 .then((response) => {
-                    console.log('=======Inizio chiamata Api=======');
+                    console.log('=======Inizio chiamata Api dei projects=======');
                     console.log(response.data.results);
                     this.projects = response.data.results;
                     console.log('Dati dei progetti memorizzati in projects:', this.projects);
@@ -39,12 +39,13 @@ export default {
 </script>
 
 <template>
-    <BaseLoader v-if="!this.projects.length" />
-    <div v-else class="row row-cols-4">
-        <ProjectsCardsItem v-show="this.projects.length" v-for="project in projects" :key="project.id"
-            :project="project" />
+    <BaseLoader v-show="!this.projects.length" />
+    <div v-show="this.projects.length" class="row row-cols-4">
+        <RouterLink v-for="project in projects" :to="{ name: 'projects.details', params: { 'id': project.id } }"
+            class="m-0 text-decoration-none">
+            <ProjectsCardsItem :key="project.id" :project="project" />
+        </RouterLink>
     </div>
-
 </template>
 
 <style lang="scss" scoped></style>

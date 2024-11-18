@@ -8,7 +8,7 @@ import AppProjectsDetails from '@/pages/AppProjectsDetails.vue'
 const routes = [
     { path: '/', component: AppHome, name: 'home' },
     { path: '/projects', component: AppProjects, name: 'projects' },
-    { path: '/projects/:id', component: AppProjectsDetails, name: 'projects.show' },
+    { path: '/projects/:id', component: AppProjectsDetails, name: 'projects.details' },
     { path: '/technologies', component: AppTechnology, name: 'technologies' }
 ]
 
