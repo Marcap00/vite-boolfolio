@@ -1,5 +1,5 @@
 <script>
-import ProjectsCardsItemModal from './ProjectCardsItemModal.vue';
+import ProjectsCardsItemModal from './ProjectsCardsItemModal.vue';
 
 export default {
     name: "ProjectsCardItem",
