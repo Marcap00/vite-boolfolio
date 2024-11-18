@@ -28,6 +28,11 @@ export default {
         },
         showModal() {
             return this.modal
+        },
+        technologyBackground() {
+            this.project.technologies.forEach(technology => {
+                return `background-color: ${technology.color}`
+            });
         }
     }
 }
@@ -66,7 +71,6 @@ export default {
         </div>
         <!-- Modal -->
         <ProjectsCardsItemModal v-if="showModal" :project="project" @closeModal="toggleModal()" />
-        <!-- <h3 v-if="this.modal">Ciao</h3> -->
     </div>
 </template>
 

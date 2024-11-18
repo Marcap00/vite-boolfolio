@@ -20,7 +20,7 @@ export default {
         },
         getImageUrl() {
             return `https://placehold.co/400x300?text=${this.project.title}`
-        }
+        },
     }
 };
 </script>

@@ -16,7 +16,7 @@ export default {
 
     },
     computed: {
-        getImageUrl() {
+        imageUrl() {
             return `https://placehold.co/400x300?text=${this.project.title}`
         },
     },
@@ -29,7 +29,7 @@ export default {
             <p class="card-text">Category: <span class="fw-semibold">{{ project.type.name }}</span></p>
             <div class="card-img-top mb-2">
                 <img v-if="project.image" :src="project.image" :alt="project.title">
-                <img v-else class="img-fluid" :src="getImageUrl" :alt="project.title">
+                <img v-else class="img-fluid" :src="imageUrl" :alt="project.title">
             </div>
             <p class="card-text">
                 <span v-for="technology in project.technologies" class="badge text-black mx-2"

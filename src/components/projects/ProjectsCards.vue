@@ -32,6 +32,11 @@ export default {
                 });
         }
     },
+    computed: {
+        isProjectsLength() {
+            return this.projects.length
+        }
+    },
     created() {
         this.getDataProjects()
     }
@@ -39,8 +44,8 @@ export default {
 </script>
 
 <template>
-    <BaseLoader v-show="!this.projects.length" />
-    <div v-show="this.projects.length" class="row row-cols-4">
+    <BaseLoader v-show="!isProjectsLength" />
+    <div v-show="isProjectsLength" class="row row-cols-4">
         <ProjectsCardsItem v-for="project in projects" :key="project.id" :project="project" />
     </div>
 </template>

@@ -23,8 +23,14 @@ export default {
         },
     },
     computed: {
-        getImageUrl() {
+        imageUrl() {
             return `https://placehold.co/400x300?text=${this.technology.name}`
+        },
+        technologyBackground() {
+            return `background-color: ${this.technology.color}`
+        },
+        showModal() {
+            return this.modal
         }
     }
 }
@@ -35,11 +41,11 @@ export default {
         <div class="card text-center border-1 bg-transparent py-3">
             <div class="card-body flex justify-content-center p-0">
                 <div class="card-img-top mb-2">
-                    <img class="img-fluid" :src="getImageUrl" :alt="technology.name">
+                    <img class="img-fluid" :src="imageUrl" :alt="technology.name">
                 </div>
                 <h4 class="card-title mb-3">{{ technology.name }}</h4>
                 <p class="card-text">
-                    <span class="badge text-black mx-2" :style="`background-color: ${technology.color}`">
+                    <span class="badge text-black mx-2" :style="technologyBackground">
                         {{ technology.color }}
                     </span>
                 </p>
@@ -49,7 +55,7 @@ export default {
             </div>
         </div>
         <!-- Modal -->
-        <TechnologiesCardsItemModal v-if="this.modal" :technology="technology" @closeModal="toggleModal()" />
+        <TechnologiesCardsItemModal v-if="showModal" :technology="technology" @closeModal="toggleModal()" />
     </div>
 </template>
 

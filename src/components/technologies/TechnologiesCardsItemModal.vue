@@ -13,12 +13,12 @@ export default {
         }
     },
     computed: {
-        UpperCaseTitle() {
+        upperCaseTitle() {
             const firstLetter = this.technology.name.charAt(0).toUpperCase()
             const otherLetters = this.technology.name.substring(1)
             return firstLetter + otherLetters
         },
-        getImageUrl() {
+        imageUrl() {
             return `https://placehold.co/400x300?text=${this.technology.name}`
         }
     }
@@ -30,11 +30,11 @@ export default {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ UpperCaseTitle }} technology details</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ upperCaseTitle }} technology details</h1>
                     <button type="button" class="btn-close" @click="emitCloseModal()"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <img class="img-fluid rounded mb-2" :src="getImageUrl" :alt="technology.name">
+                    <img class="img-fluid rounded mb-2" :src="imageUrl" :alt="technology.name">
                     <h4 class="card-title mb-3">Name: {{ technology.name }}</h4>
                     <p class="card-text">
                         <span class="badge text-black mx-2" :style="`background-color: ${technology.color}`">

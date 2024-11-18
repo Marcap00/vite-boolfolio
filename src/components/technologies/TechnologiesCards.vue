@@ -32,6 +32,11 @@ export default {
                 });
         }
     },
+    computed: {
+        isTechnologiesLength() {
+            return this.technologies.length
+        }
+    },
     created() {
         this.getDataProjects()
     }
@@ -39,8 +44,8 @@ export default {
 </script>
 
 <template>
-    <BaseLoader v-show="!this.technologies.length" />
-    <div v-show="this.technologies.length" class="row row-cols-4">
+    <BaseLoader v-show="!isTechnologiesLength" />
+    <div v-show="isTechnologiesLength" class="row row-cols-4">
         <TechnologiesCardsItem v-for="technology in technologies" :key="technology.id" :technology="technology" />
     </div>
 </template>
