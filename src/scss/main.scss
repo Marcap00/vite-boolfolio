@@ -11,6 +11,11 @@ a {
 
 }
 
+main {
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+}
+
 /* Card */
 .card .card-body h6 {
     height: 50px;

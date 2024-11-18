@@ -15,8 +15,4 @@ export default {
     </main>
 </template>
 
-<style lang="scss" scoped>
-main {
-    height: calc(100vh - 60px);
-}
-</style>
+<style lang="scss" scoped></style>
