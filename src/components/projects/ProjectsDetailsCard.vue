@@ -40,12 +40,9 @@ export default {
             <h4 class="card-title mb-3">{{ project.author }}</h4>
             <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.title }}</h6>
             <p v-if="project.description" class="card-text">{{ project.description }}</p>
-            <!-- <a class="btn btn-secondary px-4 me-2" :href="project.url">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <button type="button" class="btn btn-success" @click="toggleModal()">
-                    <i class="fas fa-eye px-2"></i>
-                </button> -->
+            <a class="btn btn-secondary px-4 me-2" :href="project.url">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </div>
     </div>
 </template>

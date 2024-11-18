@@ -41,10 +41,7 @@ export default {
 <template>
     <BaseLoader v-show="!this.projects.length" />
     <div v-show="this.projects.length" class="row row-cols-4">
-        <RouterLink v-for="project in projects" :to="{ name: 'projects.details', params: { 'id': project.id } }"
-            class="m-0 text-decoration-none">
-            <ProjectsCardsItem :key="project.id" :project="project" />
-        </RouterLink>
+        <ProjectsCardsItem v-for="project in projects" :key="project.id" :project="project" />
     </div>
 </template>
 
