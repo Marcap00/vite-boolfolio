@@ -25,6 +25,9 @@ export default {
     computed: {
         getImageUrl() {
             return `https://placehold.co/400x300?text=${this.project.title}`
+        },
+        showModal() {
+            return this.modal
         }
     }
 }
@@ -57,7 +60,7 @@ export default {
             </div>
         </div>
         <!-- Modal -->
-        <ProjectsCardsItemModal v-if="this.modal" :project="project" @closeModal="toggleModal()" />
+        <ProjectsCardsItemModal v-if="showModal" :project="project" @closeModal="toggleModal()" />
         <!-- <h3 v-if="this.modal">Ciao</h3> -->
     </div>
 </template>

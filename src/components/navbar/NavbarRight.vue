@@ -21,15 +21,6 @@ export default {
             ]
         }
     },
-    computed: {
-        /* getUpperCaseLinkText() {
-            return this.links.map(link => {
-                const firstLetter = link.text.charAt(0).toUpperCase()
-                const otherLetters = link.text.slice(1)
-                return firstLetter + otherLetters
-            })
-        } */
-    }
 };
 </script>
 
@@ -37,15 +28,10 @@ export default {
     <div id="navbarNav">
         <ul class="navbar-nav">
             <li v-for="(link, index) in links" :key="index" class="nav-item">
-                <RouterLink :to="{ name: link.routeName }" activeClass="active">{{ link.text }}
+                <RouterLink :to="{ name: link.routeName }" activeClass="active">
+                    {{ link.text }}
                 </RouterLink>
             </li>
-            <!-- <li class="nav-item">
-                <RouterLink :to="{ name: 'projects' }" activeClass="active">Projects</RouterLink>
-            </li> -->
-            <!-- <li class="nav-item">
-                            <RouterLink :to="">Technologies</RouterLink>
-                        </li> -->
         </ul>
     </div>
 </template>
