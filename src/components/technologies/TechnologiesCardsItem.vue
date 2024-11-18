@@ -1,10 +1,10 @@
 <script>
-import TechnologyCardsItemModal from './TechnologyCardsItemModal.vue';
+import TechnologiesCardsItemModal from './TechnologiesCardsItemModal.vue';
 
 export default {
-    name: "TechnologyCardsItem",
+    name: "TechnologiesCardsItem",
     components: {
-        TechnologyCardsItemModal
+        TechnologiesCardsItemModal
     },
     data() {
         return {
@@ -49,7 +49,7 @@ export default {
             </div>
         </div>
         <!-- Modal -->
-        <TechnologyCardsItemModal v-if="this.modal" :technology="technology" @closeModal="toggleModal()" />
+        <TechnologiesCardsItemModal v-if="this.modal" :technology="technology" @closeModal="toggleModal()" />
     </div>
 </template>
 

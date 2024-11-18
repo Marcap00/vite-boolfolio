@@ -1,12 +1,12 @@
 <script>
 import axios from 'axios';
-import TechnologyCardsItem from './TechnologyCardsItem.vue';
+import TechnologiesCardsItem from './TechnologiesCardsItem.vue';
 import BaseLoader from '../general/BaseLoader.vue';
 
 export default {
-    name: "TechnologyCards",
+    name: "TechnologiesCards",
     components: {
-        TechnologyCardsItem,
+        TechnologiesCardsItem,
         BaseLoader
     },
     data() {
@@ -39,10 +39,9 @@ export default {
 </script>
 
 <template>
-    <BaseLoader v-if="!this.technologies.length" />
-    <div v-else class="row row-cols-4">
-        <TechnologyCardsItem v-show="this.technologies.length" v-for="technology in technologies" :key="technology.id"
-            :technology="technology" />
+    <BaseLoader v-show="!this.technologies.length" />
+    <div v-show="this.technologies.length" class="row row-cols-4">
+        <TechnologiesCardsItem v-for="technology in technologies" :key="technology.id" :technology="technology" />
     </div>
 </template>
 

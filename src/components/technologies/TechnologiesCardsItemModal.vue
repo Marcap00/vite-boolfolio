@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: 'TechnologiesCardsItemModal',
     props: {
         technology: {
             type: Object,

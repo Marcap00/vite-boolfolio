@@ -1,10 +1,10 @@
 <script>
-import TechnologyCards from '../components/technologies/TechnologyCards.vue';
+import TechnologiesCards from '../components/technologies/TechnologiesCards.vue';
 
 export default {
-    name: "AppTechnology",
+    name: "AppTechnologies",
     components: {
-        TechnologyCards
+        TechnologiesCards
     },
 };
 </script>
@@ -12,7 +12,7 @@ export default {
 <template>
     <main class="bg-body-tertiary">
         <div class="container">
-            <TechnologyCards />
+            <TechnologiesCards />
         </div>
     </main>
 </template>
