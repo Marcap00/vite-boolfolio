@@ -41,7 +41,7 @@ export default {
                     <h4 class="card-title mb-3">Name: {{ technology.name }}</h4>
                     <p class="card-text">
                         <span class="badge text-black mx-2" :style="technologyBackground">
-                            Color: #{{ technology.color }}
+                            Color: {{ technology.color }}
                         </span>
                     </p>
                 </div>
