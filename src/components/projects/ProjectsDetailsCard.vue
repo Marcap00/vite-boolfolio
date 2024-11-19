@@ -20,7 +20,9 @@ export default {
             return `https://placehold.co/400x300?text=${this.project.title}`
         },
         technologies() {
-            return this.project.technologies.map(({ name, color }) => ({ name: name, color: `background-color: ${color}` }));
+            if (this.project.technologies) {
+                return this.project.technologies.map(({ name, color }) => ({ name: name, color: `background-color: ${color}` }));
+            }
         }
     },
 };
@@ -29,7 +31,8 @@ export default {
 <template>
     <div class="card text-center border-1 bg-transparent py-3">
         <div class="card-body flex justify-content-center p-0">
-            <p class="card-text">Category: <span class="fw-semibold">{{ project.type.name }}</span></p>
+            <p v-if="project.type" class="card-text">Category: <span class="fw-semibold">{{ project.type.name }}</span>
+            </p>
             <div class="card-img-top mb-2">
                 <img v-if="project.image" :src="project.image" :alt="project.title">
                 <img v-else class="img-fluid" :src="imageUrl" :alt="project.title">
