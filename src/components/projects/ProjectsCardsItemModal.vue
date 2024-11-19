@@ -21,6 +21,9 @@ export default {
         getImageUrl() {
             return `https://placehold.co/400x300?text=${this.project.title}`
         },
+        technologies() {
+            return this.project.technologies.map(({ name, color }) => ({ name: name, color: `background-color: ${color}` }));
+        }
     }
 };
 </script>
@@ -38,8 +41,8 @@ export default {
                     <img v-if="project.image" :src="project.image" :alt="project.title">
                     <img v-else class="img-fluid rounded mb-2" :src="getImageUrl" :alt="project.title">
                     <p class="card-text">
-                        <span v-for="technology in project.technologies" class="badge text-black mx-2"
-                            :style="`background-color: ${technology.color}`">
+                        <span v-for="technology in technologies" class="badge text-black mx-2"
+                            :style="technology.color">
                             #{{ technology.name }}
                         </span>
                     </p>

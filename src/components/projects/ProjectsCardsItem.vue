@@ -29,10 +29,8 @@ export default {
         showModal() {
             return this.modal
         },
-        technologyBackground() {
-            this.project.technologies.forEach(technology => {
-                return `background-color: ${technology.color}`
-            });
+        technologies() {
+            return this.project.technologies.map(({ name, color }) => ({ name: name, color: `background-color: ${color}` }));
         }
     }
 }
@@ -51,8 +49,8 @@ export default {
                         <img v-else class="img-fluid" :src="getImageUrl" :alt="project.title">
                     </div>
                     <p class="card-text">
-                        <span v-for="technology in project.technologies" class="badge text-black mx-2"
-                            :style="`background-color: ${technology.color}`">
+                        <span v-for="technology in technologies" class="badge text-black mx-2"
+                            :style="technology.color">
                             #{{ technology.name }}
                         </span>
                     </p>
